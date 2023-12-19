@@ -1,0 +1,6 @@
+[2023-12-19 21:00:19,638] 22 - root - INFO - Entered data ingestion method
+[2023-12-19 21:00:19,638] 25 - root - INFO - Reading data from dataframe
+[2023-12-19 21:00:19,654] 28 - root - INFO - train test has been initialized 
+[2023-12-19 21:00:19,654] 34 - root - INFO - Ingestion of data is complete
+[2023-12-19 21:00:19,654] 62 - root - INFO - Reading data from dataframe
+[2023-12-19 21:00:19,654] 64 - root - INFO - Obtaining preprocessing object
