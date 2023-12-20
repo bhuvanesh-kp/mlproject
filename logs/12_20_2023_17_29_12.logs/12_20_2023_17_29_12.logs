@@ -1,0 +1,13 @@
+[2023-12-20 17:29:13,259] 23 - root - INFO - Entered data ingestion method
+[2023-12-20 17:29:13,259] 26 - root - INFO - Reading data from dataframe
+[2023-12-20 17:29:13,259] 29 - root - INFO - train test has been initialized 
+[2023-12-20 17:29:13,275] 35 - root - INFO - Ingestion of data is complete
+[2023-12-20 17:29:13,275] 62 - root - INFO - Reading data from dataframe
+[2023-12-20 17:29:13,275] 64 - root - INFO - Obtaining preprocessing object
+[2023-12-20 17:29:13,275] 41 - root - INFO - Numerical transformation done
+[2023-12-20 17:29:13,275] 43 - root - INFO - Categorial encoding done
+[2023-12-20 17:29:13,275] 76 - root - INFO - Applying preprocessing object on training dataframe and testing dataframe.
+[2023-12-20 17:29:13,306] 90 - root - INFO - Saved preprocessing object.
+[2023-12-20 17:29:13,306] 34 - root - INFO - Split training and test input data
+[2023-12-20 17:30:46,007] 100 - root - INFO - Best found model on both training and testing dataset
+[2023-12-20 17:30:46,007] 102 - root - INFO - Saving best model
