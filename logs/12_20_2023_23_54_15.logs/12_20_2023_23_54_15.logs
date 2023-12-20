@@ -1,0 +1,46 @@
+[2023-12-20 23:54:15,204] 96 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.68:5000
+[2023-12-20 23:54:15,204] 96 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2023-12-20 23:54:22,735] 96 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 23:54:22] "GET / HTTP/1.1" 200 -
+[2023-12-20 23:54:33,050] 96 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 23:54:33] "GET /predict HTTP/1.1" 200 -
+[2023-12-20 23:54:48,874] 825 - app - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "D:\Git-1\mlproject\src\utils.py", line 53, in load_object
+    with open(file_path, "rb") as file_obj:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprosessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Git-1\mlproject\src\pipeline\predict_pipeline.py", line 17, in predict
+    preprocessor = load_object(preprocessor_path)
+  File "D:\Git-1\mlproject\src\utils.py", line 57, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occurred in python script name [D:\Git-1\mlproject\src\utils.py] line number [53] error message [[Errno 2] No such file or directory: 'artifacts\\preprosessor.pkl']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 34, in predict_datapoint
+    results = predict_pipeline.predict(pred)
+  File "D:\Git-1\mlproject\src\pipeline\predict_pipeline.py", line 22, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occurred in python script name [D:\Git-1\mlproject\src\pipeline\predict_pipeline.py] line number [17] error message [Error occurred in python script name [D:\Git-1\mlproject\src\utils.py] line number [53] error message [[Errno 2] No such file or directory: 'artifacts\\preprosessor.pkl']]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Git-1\mlproject\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\Git-1\mlproject\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\Git-1\mlproject\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\Git-1\mlproject\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "app.py", line 40, in predict_datapoint
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occurred in python script name [app.py] line number [34] error message [Error occurred in python script name [D:\Git-1\mlproject\src\pipeline\predict_pipeline.py] line number [17] error message [Error occurred in python script name [D:\Git-1\mlproject\src\utils.py] line number [53] error message [[Errno 2] No such file or directory: 'artifacts\\preprosessor.pkl']]]
+[2023-12-20 23:54:48,878] 96 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 23:54:48] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
